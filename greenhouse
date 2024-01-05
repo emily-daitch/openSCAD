@@ -1,0 +1,480 @@
+foot = 12;
+grounding = 2*foot;
+tallHeight = 9*foot;
+shortHeight = 8*foot;
+width = 9*foot;
+depth = 14*foot;
+doorHeight = 7*foot;
+doorWidth = 3*foot + 2;
+post = 4;
+transpx = .2;
+
+//[x,y,z]
+
+//Front Left
+color("#DEAF84"){
+translate([0,0,-grounding]) {
+  cube([post,post,tallHeight+6+grounding]);
+}
+}
+
+//Front Right
+color("#DEAF84"){
+translate([width-post,0,-grounding]) {
+  cube([post,post,shortHeight+6+grounding]);
+}
+}
+
+//Back Left
+color("#DEAF84"){
+translate([0, depth-post, -grounding]) {
+  cube([post,post,tallHeight+6+grounding]);
+}
+}
+
+//Back Right
+color("#DEAF84"){
+translate([width-post, depth-post, -grounding]) {
+  cube([post,post,shortHeight+6+grounding]);
+}
+}
+
+//Front Roof Slant
+color("#714423") {
+    translate([-12,-10, tallHeight+4]){
+        rotate([0,7,0]) {
+          cube([width+26,2,4]);
+        }
+    }
+}
+//Back Roof Slant
+color("#714423") {
+    translate([-12,depth+10, tallHeight+4]){
+        rotate([0,7,0]) {
+          cube([width+26,2,4]);
+        }
+    }
+}
+//Front Roof Slant Tie
+color("#714423") {
+    translate([-12,-2, tallHeight+4]){
+        rotate([0,7,0]) {
+          cube([width+26,2,4]);
+        }
+    }
+}
+//Back Roof Slant Tie
+color("#714423") {
+    translate([-12,depth, tallHeight+4]){
+        rotate([0,7,0]) {
+          cube([width+26,2,4]);
+        }
+    }
+}
+//Left Roof 
+color("#DEAF84") {
+    translate([-12,-10, tallHeight+8]){
+        rotate([0,7,0]) {
+          cube([4,depth+22,2]);
+        }
+    }
+}
+
+//Right Roof 
+color("#DEAF84") {
+    translate([width+10,-10, shortHeight+4]){
+        rotate([0,7,0]) {
+          cube([4,depth+22,2]);
+        }
+    }
+}
+
+//Left Roof Door
+color("#DEAF84") {
+    translate([width/4-12,-10, shortHeight+16.4]){
+        rotate([0,7,0]) {
+          cube([4,depth+22,2]);
+        }
+    }
+}
+//Right Roof Door
+color("#DEAF84") {
+    translate([width/4+12,-10, shortHeight+13.8]){
+        rotate([0,7,0]) {
+          cube([4,depth+22,2]);
+        }
+    }
+}
+//Front Roof Perim
+color("#714423") {
+    translate([-11.5,-10, shortHeight+21.8]){
+        rotate([0,7,0]) {
+          cube([width+27,4,2]);
+        }
+    }
+}
+//Back Roof Perim
+color("#714423") {
+    translate([-11.5,depth+8, shortHeight+21.8]){
+        rotate([0,7,0]) {
+          cube([width+27,4,2]);
+        }
+    }
+}
+//Front Roof Door Perim
+color("#714423") {
+    translate([-11.5,-10+48, shortHeight+21.8]){
+        rotate([0,7,0]) {
+          cube([width+27,4,2]);
+        }
+    }
+}
+//Back Roof Door Perim
+color("#714423") {
+    translate([-11.5,depth+8-48, shortHeight+21.8]){
+        rotate([0,7,0]) {
+          cube([width+27,4,2]);
+        }
+    }
+}
+//Front Roof Cover
+color([1,1,1,transpx]) {
+    translate([-11.5,-6, shortHeight+22.8]){
+        rotate([0,7,0]) {
+          cube([width+27,44,.2]);
+        }
+    }
+}
+//Back Roof Cover
+color([1,1,1,transpx]) {
+    translate([-11.5,depth-36, shortHeight+22.8]){
+        rotate([0,7,0]) {
+          cube([width+27,44,.2]);
+        }
+    }
+}
+//Left Roof Cover
+color([1,1,1,transpx]) {
+    translate([-11.5,42.5, shortHeight+22.8]){
+        rotate([0,7,0]) {
+          cube([31,85,.2]);
+        }
+    }
+}
+//Right Roof Cover
+/*color([1,1,1,transpx]) {
+    translate([40,42.5, shortHeight+15.8]){
+        rotate([0,7,0]) {
+          cube([83,85,.2]);
+        }
+    }
+}*/
+//Front Roof Door
+color("#714423") {
+    translate([19,42.5, shortHeight+18.8]){
+        rotate([0,-37,0]) {
+          cube([20,42.5,.4]);
+        }
+    }
+}
+//Rear Roof Door
+color("#714423") {
+    translate([19,85, shortHeight+18.8]){
+        rotate([0,7,0]) {
+          cube([21,43,.2]);
+        }
+    }
+}
+
+//Floor
+color("#714423") {
+  cube([width,depth,0.1]);
+}
+
+//Front Door Topper Board
+color("#714423") {
+  translate([0,-2,doorHeight]) {
+    cube([width,2,4]);
+  }
+}
+//Rear Wall Topper
+color("#714423") {
+  translate([0,depth,shortHeight-4]) {
+    cube([width,2,4]);
+  }
+}
+//Front Wall Topper
+color("#714423") {
+  translate([0,-2,shortHeight-4]) {
+    cube([width,2,4]);
+  }
+}
+//Rear Wall Mid
+color("#714423") {
+  translate([0,depth,(shortHeight-4)/2]) {
+    cube([width,2,4]);
+  }
+}
+//Left Wall Topper
+color("#714423") {
+  translate([-2,-2,shortHeight-4]) {
+    cube([2,depth+4,4]);
+  }
+}
+//Left Wall Topper Screen
+color([1,1,1,transpx]) {
+  translate([0,4,shortHeight]) {
+    cube([2,depth-8,20]);
+  }
+}
+//Right Wall Topper Screen
+color([1,1,1,transpx]) {
+  translate([width,4,shortHeight]) {
+    cube([2,depth-8,7]);
+  }
+}
+
+//Front Topper Screen
+color([1,1,1,transpx]) {
+//color("#FF0000") {
+  translate([4,0,96]) {
+    rotate([90,0,0]) {
+      polygon([[0,0],[115,0],[0,15]]);
+    }
+  }
+}
+//Front Topper Screen
+color([1,1,1,transpx]) {
+//color("#FF0000") {
+  translate([4,167,96]) {
+    rotate([90,0,0]) {
+      polygon([[0,0],[115,0],[0,15]]);
+    }
+  }
+}
+
+//Right Wall Mid
+color("#714423") {
+  translate([width,0,(shortHeight-4)/2]) {
+    cube([2,depth+2,4]);
+  }
+}
+//Left Wall Vert
+color("#714423") {
+  translate([0,depth/2-2,0]) {
+    cube([2,4,shortHeight]);
+  }
+}
+//Right Wall Vert
+color("#714423") {
+  translate([width-2,depth/2-2,0]) {
+    cube([2,4,shortHeight]);
+  }
+}
+//Left Wall Mid
+color("#714423") {
+  translate([-2,0,(shortHeight-4)/2]) {
+    cube([2,depth+2,4]);
+  }
+}
+//Right Wall Topper
+color("#714423") {
+  translate([width,-2,shortHeight-4]) {
+    cube([2,depth+4,4]);
+  }
+}
+//Right Wall top left
+/*color([1,1,1,transpx]) {
+  translate([width,4,shortHeight/2+2]) {
+    cube([.2,depth/2-6,42]);
+  }
+}
+//Right Wall bottom left
+color([1,1,1,transpx]) {
+  translate([width,4,4]) {
+    cube([.2,depth/2-6,42]);
+  }
+}
+
+//Right Wall top right
+color([1,1,1,transpx]) {
+  translate([width,86,shortHeight/2+2]) {
+    cube([.2,depth/2-6,42]);
+  }
+}
+//Right Wall bottom right
+color([1,1,1,transpx]) {
+  translate([width,86,4]) {
+    cube([.2,depth/2-6,42]);
+  }
+}*/
+
+//Pot
+color("#FFA500"){
+    translate([width/2,depth-20,0]){
+      cylinder(20,10,12);
+    }
+}
+//Plant
+color("#00FF00"){
+    translate([width/2,depth-20,28]){
+      sphere(3);
+    }
+    translate([width/2,depth-20,38]){
+      sphere(5);
+    }
+    translate([width/2,depth-20,50]){
+      sphere(7);
+    }
+}
+
+
+//Left Wall top left
+color([1,1,1,transpx]) {
+  translate([0,4,shortHeight/2+2]) {
+    cube([.2,depth/2-6,42]);
+  }
+}
+//Left Wall bottom left
+color([1,1,1,transpx]) {
+  translate([0,4,4]) {
+    cube([.2,depth/2-6,42]);
+  }
+}
+
+//Left Wall top right
+color([1,1,1,transpx]) {
+  translate([0,86,shortHeight/2+2]) {
+    cube([.2,depth/2-6,42]);
+  }
+}
+//Left Wall bottom right
+color([1,1,1,transpx]) {
+  translate([0,86,4]) {
+    cube([.2,depth/2-6,42]);
+  }
+}
+
+
+//Front Door Topper Board Behind
+color("#714423") {
+  translate([4,0,doorHeight]) {
+    cube([width-8,2,4]);
+  }
+}
+//Front Door Topper Seal
+color("#714423") {
+  translate([4,0,doorHeight+4]) {
+    cube([width-8,1,4]);
+  }
+}
+//Front Door Bottom Board Left
+color("#714423") {
+  translate([-2,-2,0]) {
+    cube([37,2,4]);
+  }
+}
+//Front Door Bottom Board Left Behind
+color("#714423") {
+  translate([4,0,0]) {
+    cube([27,2,4]);
+  }
+}
+//Front Door Bottom Board Right
+color("#714423") {
+  translate([73,-2,0]) {
+    cube([37,2,4]);
+  }
+}
+//Front Door Bottom Board Right Behind
+color("#714423") {
+  translate([77,0,0]) {
+    cube([27,2,4]);
+  }
+}
+//Door Frame Left
+color("#714423") {
+  translate([(width-doorWidth)/2 - 4,0,0]) {
+    cube([4,2,doorHeight]);
+  }
+}
+//Door Frame Right
+color("#714423") {
+  translate([width-doorWidth+3,0,0]) {
+    cube([4,2,doorHeight]);
+  }
+}
+//Door Frame Left Forward
+color("#714423") {
+  translate([(width-doorWidth)/2 - 4,-2,+4]) {
+    cube([4,2,doorHeight-4]);
+  }
+}
+//Door Frame Right Forward
+color("#714423") {
+  translate([width-doorWidth+3,-2,+4]) {
+    cube([4,2,doorHeight-4]);
+  }
+}
+//Door Placeholder
+color("#97704F") {
+  translate([(width-doorWidth)/2,0,0]) {
+    rotate([0,0,-45]){
+      cube([doorWidth,2,doorHeight]);
+    }
+  }
+}
+//Left of Door Placeholder
+color([1,1,1,transpx]) {
+  translate([4,0,4]) {
+    cube([(width-doorWidth)/2 -4 -4,2,doorHeight-4]);
+  }
+}
+//Right of Door Placeholder
+/*color([1,1,1,transpx]) {
+  translate([(width-doorWidth)/2 + doorWidth + 4,0,4]) {
+    cube([(width-doorWidth)/2 -4 -4,2,doorHeight-4]);
+  }
+}*/
+//Back Bottom Board
+color("#714423") {
+  translate([-2,depth,0]) {
+    cube([width+4,2,4]);
+  }
+}
+//Back Top Placeholder
+color([1,1,1,transpx]) {
+  translate([4,depth,50]) {
+    cube([width-8,.2,42]);
+  }
+}
+//Back Bottom Placeholder
+color([1,1,1,transpx]) {
+  translate([4,depth,4]) {
+    cube([width-8,.2,42]);
+  }
+}
+//Left Bottom Board
+color("#714423") {
+  translate([-2,0,0]) {
+    cube([2,depth,4]);
+  }
+}
+//Right Bottom Board
+color("#714423") {
+  translate([width,0,0]) {
+    cube([2,depth,4]);
+  }
+}
+
+//Table Top Placeholder
+color("#DEAF84") {
+    translate([0,0, shortHeight/2]){
+        cube([24,depth,1]);
+    }
+}
+color("#DEAF84") {
+    translate([80,0, shortHeight/2]){
+        cube([24,depth,1]);
+    }
+}
